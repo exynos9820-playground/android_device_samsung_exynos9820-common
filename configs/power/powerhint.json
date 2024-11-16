@@ -1,5 +1,87 @@
 {
     "Nodes": [
+         {
+            "Name": "CPULittleClusterMaxFreq",
+            "Path": "/dev/cluster0_freq_max",
+            "Values": [
+                "0x001dc130",
+                "0x00183350",
+                "0x00163780",
+                "0x0013d620"
+            ],
+            "HoldFd": true,
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPULittleClusterMinFreq",
+            "Path": "/dev/cluster0_freq_min",
+            "Values": [
+                "0x001dc130",
+                "0x00183350",
+                "0x0013d620",
+                "0x0011a788",
+                "0x000c4c70",
+                "0x00000000"
+            ],
+            "HoldFd": true,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigClusterMaxFreq",
+            "Path": "/dev/cluster1_freq_max",
+            "Values": [
+                "0x00234f10",
+                "0x001cf610",
+                "0x00183350",
+                "0x00156c60",
+                "0x0012a570"
+            ],
+            "HoldFd": true,
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigClusterMinFreq",
+            "Path": "/dev/cluster1_freq_min",
+            "Values": [
+                "0x00234f10",
+                "0x00183350",
+                "0x00156c60",
+                "0x0012a570",
+                "0x000ce4c8",
+                "0x00000000"
+            ],
+            "HoldFd": true,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigPlusClusterMaxFreq",
+            "Path": "/dev/cluster2_freq_max",
+            "Values": [
+                "0x0029a810",
+                "0x0023b4a0",
+                "0x001bc560",
+                "0x001506d0"
+            ],
+            "HoldFd": true,
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigPlusClusterMinFreq",
+            "Path": "/dev/cluster2_freq_min",
+            "Values": [
+                "0x0029a810",
+                "0x001bc560",
+                "0x0017cdc0",
+                "0x001506d0",
+                "0x000c7f38",
+                "0x00000000"
+            ],
+            "HoldFd": true,
+            "ResetOnInit": true
+        },
         {
             "Name": "GPUMinFreq",
             "Path": "/dev/gpu_freq_min",
@@ -10,15 +92,6 @@
                 "0x000026160"
             ],
             "HoldFd": true,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "TASchedtuneBoost",
-            "Path": "/dev/stune/top-app/schedtune.boost",
-            "Values": [
-                "30",
-                "5"
-            ],
             "ResetOnInit": true
         },
         {
@@ -62,9 +135,51 @@
     "Actions": [
         {
             "PowerHint": "INTERACTION",
-            "Node": "TASchedtuneBoost",
-            "Duration": 0,
-            "Value": "30"
+            "Node": "CPUBigClusterMinFreq",
+            "Duration": 58,
+            "Value": "0x00156c60"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUBigPlusClusterMinFreq",
+            "Duration": 58,
+            "Value": "0x001506d0"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPULittleClusterMinFreq",
+            "Duration": 58,
+            "Value": "0x00183350"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUBigClusterMaxFreq",
+            "Duration": 1000,
+            "Value": "0x00234f10"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUBigPlusClusterMaxFreq",
+            "Duration": 1000,
+            "Value": "0x0029a810"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUBigClusterMinFreq",
+            "Duration": 1000,
+            "Value": "0x00234f10"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUBigPlusClusterMinFreq",
+            "Duration": 1000,
+            "Value": "0x0029a810"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPULittleClusterMinFreq",
+            "Duration": 1000,
+            "Value": "0x001dc130"
         },
         {
             "PowerHint": "INTERACTION",
