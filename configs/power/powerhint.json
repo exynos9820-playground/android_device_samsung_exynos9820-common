@@ -1,6 +1,16 @@
 {
     "Nodes": [
          {
+            "Name": "MemFreq",
+            "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
+            "Values": [
+                "2093000",
+                "1794000",
+                "421000"
+            ],
+            "ResetOnInit": true
+         },
+         {
             "Name": "CPULittleClusterMaxFreq",
             "Path": "/dev/cluster0_freq_max",
             "Values": [
@@ -49,6 +59,7 @@
                 "0x00183350",
                 "0x00156c60",
                 "0x0012a570",
+                "0x001702a0",
                 "0x000ce4c8",
                 "0x00000000"
             ],
@@ -77,6 +88,7 @@
                 "0x0017cdc0",
                 "0x001506d0",
                 "0x000c7f38",
+                "0x00163780",
                 "0x00000000"
             ],
             "HoldFd": true,
@@ -137,19 +149,13 @@
             "PowerHint": "INTERACTION",
             "Node": "CPUBigClusterMinFreq",
             "Duration": 58,
-            "Value": "0x00156c60"
+            "Value": "0x001702a0"
         },
         {
             "PowerHint": "INTERACTION",
             "Node": "CPUBigPlusClusterMinFreq",
             "Duration": 58,
-            "Value": "0x001506d0"
-        },
-        {
-            "PowerHint": "INTERACTION",
-            "Node": "CPULittleClusterMinFreq",
-            "Duration": 58,
-            "Value": "0x00183350"
+            "Value": "0x00163780"
         },
         {
             "PowerHint": "LAUNCH",
@@ -177,9 +183,9 @@
         },
         {
             "PowerHint": "LAUNCH",
-            "Node": "CPULittleClusterMinFreq",
+            "Node": "MemFreq",
             "Duration": 1000,
-            "Value": "0x001dc130"
+            "Value": "2093000"
         },
         {
             "PowerHint": "INTERACTION",
