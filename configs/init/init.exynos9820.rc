@@ -851,6 +851,14 @@ on boot
     chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_upscale_ratio
     chmod 0664 /sys/kernel/ems/frt/disable_cpufreq
 
+# surfaceflinger timings
+    setprop debug.sf.early.app.duration 8333333
+    setprop debug.sf.early.sf.duration 8333333
+    setprop debug.sf.earlyGl.app.duration 8333333
+    setprop debug.sf.earlyGl.sf.duration 8333333
+    setprop debug.sf.late.app.duration 8333333
+    setprop debug.sf.late.sf.duration 8333333
+
 # Permissions for  LSI NFC
     chmod 0660 /dev/sec-nfc
     chown nfc nfc /dev/sec-nfc
