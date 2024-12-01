@@ -23,6 +23,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Soong namespaces
 $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
 
+# Platform
+TARGET_BOARD_PLATFORM = exynos9820
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
@@ -158,10 +161,6 @@ PRODUCT_PACKAGES += \
     libcrypto-tm \
     libshim_crypto:64 \
     libssl-tm
-
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
 
 # Media
 PRODUCT_COPY_FILES += \
