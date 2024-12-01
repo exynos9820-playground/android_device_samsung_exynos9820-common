@@ -56,7 +56,7 @@
          },
          {
             "Name": "MemFreq",
-            "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
+            "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_freq_min",
             "Values": [
                 "2093000",
                 "1794000",
