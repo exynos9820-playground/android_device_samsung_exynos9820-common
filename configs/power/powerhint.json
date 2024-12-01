@@ -251,7 +251,7 @@
             "PowerHint": "INTERACTION",
             "Node": "CPUBigPlusClusterMinFreq",
             "Duration": 58,
-            "Value": "0x001bc560"
+            "Value": "0x00163780"
         },
         {
             "PowerHint": "LAUNCH",
