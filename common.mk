@@ -104,7 +104,7 @@ PRODUCT_PACKAGES += \
 
 # FastCharge
 PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.0-service.samsung
+    FastCharge
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -199,6 +199,8 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    FastCharge9820
 
 # Permissions
 PRODUCT_COPY_FILES += \

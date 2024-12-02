@@ -722,6 +722,10 @@ on boot
     write /dev/cpuctl/camera-daemon/cpu.uclamp.min 50
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
 
+    # Allow system to manipulate Fast Charge node
+    chown system system /sys/class/sec/switch/afc_disable
+    chmod 0660 /sys/class/sec/switch/afc_disable
+
 # Permissions for  LSI NFC
     chmod 0660 /dev/sec-nfc
     chown nfc nfc /dev/sec-nfc
