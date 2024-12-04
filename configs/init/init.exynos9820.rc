@@ -601,7 +601,7 @@ on boot
     chmod 0664 /sys/power/boost_mode_change
 
     # DEVFreq
-    chown radio system /sys/class/devfreq/17000010.devfreq_mif/scaling_devfreq_min
+    chown system system /sys/class/devfreq/17000010.devfreq_mif/scaling_devfreq_min
     chmod 0664 /sys/class/devfreq/17000010.devfreq_mif/scaling_devfreq_min
 
     # GPU DVFS
@@ -721,6 +721,18 @@ on boot
     write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
     write /dev/cpuctl/camera-daemon/cpu.uclamp.min 50
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
+
+    # Setup cpu.shares to throttle background groups (bg ~ 5% sysbg ~ 5% dex2oat ~2.5%)
+    write /dev/cpuctl/background/cpu.shares 1024
+    write /dev/cpuctl/system-background/cpu.shares 1024
+    write /dev/cpuctl/dex2oat/cpu.shares 512
+    write /dev/cpuctl/system/cpu.shares 20480
+    # We only have system and background groups holding tasks and the groups below are empty
+    write /dev/cpuctl/camera-daemon/cpu.shares 20480
+    write /dev/cpuctl/foreground/cpu.shares 20480
+    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+    write /dev/cpuctl/rt/cpu.shares 20480
+    write /dev/cpuctl/top-app/cpu.shares 20480
 
     # Allow system to manipulate Fast Charge node
     chown system system /sys/class/sec/switch/afc_disable
