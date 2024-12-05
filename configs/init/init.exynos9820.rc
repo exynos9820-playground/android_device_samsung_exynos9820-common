@@ -522,8 +522,9 @@ on post-fs-data
     chmod 0644 /dev/freezer/abnormal/freezer.state
 
 on boot
-# SSWAP
-    write /proc/sys/vm/swappiness 160
+# zram
+    write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/swappiness 60
 
 # Bluetooth
     chown bluetooth bluetooth /dev/ttySAC1
